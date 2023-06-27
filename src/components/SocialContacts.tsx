@@ -1,5 +1,6 @@
 import { GitHubIcon } from './GitHubIcon'
 import { LinkedInIcon } from './LinkedInIcon'
+import { EmailIcon } from './EmailIcon'
 
 const socialComponents = [
   {
@@ -11,6 +12,11 @@ const socialComponents = [
     name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/gobriansteele/',
     Icon: LinkedInIcon,
+  },
+  {
+    name: 'Email',
+    link: 'mailto:hello@briansteele.dev',
+    Icon: EmailIcon,
   },
 ]
 
