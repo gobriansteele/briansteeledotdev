@@ -15,7 +15,7 @@ module.exports = {
       colors: {
         'santa-gray': '#c8cdd5',
         'santa-juniper': '#acb4a1',
-        'santa-plum': '#81747d',
+        'santa-plum': '#574F63',
         'santa-sky': '#8c8cb4',
         'santa-red': '#bc745c',
       },
