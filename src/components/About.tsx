@@ -46,9 +46,16 @@ export function About() {
         </p>
         <p>
           When not writing code or designing solutions to engineering challenges
-          you can find me on my bike on the local trails here in Santa Fe, NM.
-          I&#39;ve also been known to frequent great coffee shops as well as
-          breweries with good IPAs.
+          you can find me{' '}
+          <a
+            href="https://www.strava.com/athletes/33433580"
+            target="_blank"
+            className="font-medium text-white"
+          >
+            on my bike
+          </a>{' '}
+          on the local trails here in Santa Fe, NM. I&#39;ve also been known to
+          frequent great coffee shops as well as breweries with good IPAs.
         </p>
       </div>
     </section>
