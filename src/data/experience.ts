@@ -29,6 +29,6 @@ export const experience = [
     company: 'Ameriprise Financial',
     role: 'Director - Front End Engineering',
     tags: ['TypeScript', 'JavaScript', 'Backbone', 'React', 'Leadership'],
-    description: `Started as only front-end engineer in organization and grew team to 25 engineers. Team was responsible for building out all advisor facing applications used to create and maintain business. Led migration to SPA architecture. Implemented hiring best practices. Worked with staff engineers to utilize TypeScript in the codebase. Led enterprise in choosing React as the standard framework`,
+    description: `Started as only front-end engineer in organization and grew team to 25 engineers. Team was responsible for building out all advisor facing applications used to create and maintain business. Led migration to SPA architecture. Implemented hiring best practices. Worked with staff engineers to utilize TypeScript in the codebase. Led enterprise in choosing React as the standard framework.`,
   } as const,
 ]

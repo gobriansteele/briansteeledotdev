@@ -30,7 +30,7 @@ export function ExperienceCard({
           {tags.map((t, idx) => {
             return (
               <span
-                className="px-2 py-1 bg-santa-juniper rounded-xl text-santa-plum"
+                className="px-2 py-1 bg-santa-juniper rounded-full text-santa-plum text-sm"
                 key={`${t}-${idx}`}
               >
                 {t}
