@@ -3,7 +3,7 @@ import { SocialContacts } from './SocialContacts'
 
 export function Header() {
   return (
-    <header className="text-santa-gray flex flex-row justify-between w-full">
+    <header className="text-santa-gray flex flex-row justify-between w-full md:flex-col md:gap-12 md:w-1/3">
       <div className="flex flex-col gap-2 max-w-md">
         <h1 className="text-4xl font-bold">Brian Steele</h1>
         <h2 className="text-2xl">Lead Software Engineer</h2>
