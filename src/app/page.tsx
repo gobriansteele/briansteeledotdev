@@ -11,7 +11,7 @@ export default function Home() {
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      const pos = [e.clientX, e.clientY] as [number, number]
+      const pos = [e.clientX, e.clientY + window.scrollY] as [number, number]
       setMousePosition(pos)
     }
 
