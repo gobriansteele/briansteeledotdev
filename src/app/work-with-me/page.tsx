@@ -1,9 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Header, About, Experience, ContentContainer } from '@/components'
+import { Header, WorkTogether, ContentContainer } from '@/components'
 
-export default function Home() {
+export default function Page() {
   const [mousePosition, setMousePosition] = useState<[number, number] | null>(
     null
   )
@@ -24,7 +24,6 @@ export default function Home() {
   const styleObj = {
     background: `radial-gradient(600px at ${mousePosition?.[0]}px ${mousePosition?.[1]}px, rgba(216, 211, 219, 0.15), transparent 80%)`,
   }
-
   return (
     <div className="relative">
       <div
@@ -34,10 +33,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-start  px-8 py-8 md:p-24 gap-12 md:flex-row">
         <Header />
         <ContentContainer>
-          <>
-            <About />
-            <Experience />
-          </>
+          <WorkTogether />
         </ContentContainer>
       </main>
     </div>
