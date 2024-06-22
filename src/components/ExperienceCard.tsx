@@ -16,12 +16,12 @@ export function ExperienceCard({
   description,
 }: Props) {
   return (
-    <div className="flex gap-6 max-w-xl  hover:bg-santa-gray/10 duration-500 transition-colors p-4 rounded-md cursor-pointer">
-      <div className="w-1/4">
-        <p className="uppercase text-sm font-semibold text-end">{`${startDate}-${endDate}`}</p>
+    <div className="flex flex-col md:flex gap-6 max-w-xl  hover:bg-santa-gray/10 duration-500 transition-colors md:p-4 rounded-md cursor-pointer">
+      <div className="w-full md:w-1/4">
+        <p className="uppercase text-sm font-semibold">{`${startDate}-${endDate}`}</p>
       </div>
-      <div className="w-3/4 flex flex-col gap-4">
-        <h3 className="text-lg font-semibold leading-5">
+      <div className="w-full md:w-3/4 flex flex-col gap-4">
+        <h3 className="text-lg/[150%] font-semibold">
           <span className="text-santa-red">{role}</span>
           {` - ${company}`}
         </h3>

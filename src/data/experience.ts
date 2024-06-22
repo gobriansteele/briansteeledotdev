@@ -4,7 +4,7 @@ export const experience = [
     endDate: 'Present',
     company: 'Honor Education',
     role: 'Lead Web Engineer',
-    tags: ['TypeScript', 'Next', 'Fullstack', 'Postgres', 'AWS'],
+    tags: ['TypeScript', 'Next', 'Fullstack', 'Postgres', 'AWS', 'Java', 'Python', 'Micronaut'],
     description: `Working as a founding web-engineer responsible for building the apps that instituions use to craft their course content as well as building the apps students use to consume. Spent most of my time building in Next with TypeScript and crafting APIs using Node and Java hitting a Postgres DB all deployed on AWS infra.`,
   } as const,
   {
@@ -12,7 +12,7 @@ export const experience = [
     endDate: '2022',
     company: 'DocuSign',
     role: 'Lead Web Engineer',
-    tags: ['TypeScript', 'React', 'Component Library'],
+    tags: ['TypeScript', 'React', 'Component Library', 'Design Systems'],
     description: `Leading a team of engineers who built a React component library used to power apps across the enterprise. Led the transition to TypeScript which led to easier refactors with less regressions. Also, implemented a robust CI/CD pipeline that reduced developer effort required for releasing as well as making it easier for the flaghsip apps to upgrade. Build out a hiring pipeline and helped build the team culture.`,
   } as const,
   {
