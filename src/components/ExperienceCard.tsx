@@ -32,7 +32,7 @@ export function ExperienceCard({
     const animation: AnimationSequence = isInView
       ? [
           ['div', { opacity: [1] }, { duration: 0.3, delay: 0.2 }],
-          ['.tags', { filter: ['blur(12px)', 'blur(0px)'] }, { duration: 0.3 }],
+          ['.tags', { filter: ['blur(0px)'] }, { duration: 0.3 }],
         ]
       : [
           ['div', { opacity: [0] }, { duration: 0.3, delay: 0.2 }],
