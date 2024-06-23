@@ -10,7 +10,7 @@ const sequence = [
   ['h2', { opacity: [0, 1] }, { duration: 0.5, at: 1 }],
   ['p', { opacity: [0, 1] }, { duration: 0.5, at: 1 }],
   ['#social', { opacity: [0, 1] }, { duration: 0.5, at: 1 }],
-  ['img', { opacity: [0, 1] }, { duration: 0.5, at: 1.5 }],
+  ['#avatar', { opacity: [0, 1] }, { duration: 0.5, at: 1.5 }],
 ] satisfies AnimationSequence
 
 export function Header() {
