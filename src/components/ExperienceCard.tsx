@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useInView, useAnimate } from 'framer-motion'
+import { useInView, useAnimate, type AnimationSequence } from 'framer-motion'
 
 type Props = {
   startDate: string
@@ -25,12 +25,21 @@ export function ExperienceCard({
 
   const isInView = useInView(scope, {
     once: true,
+    amount: 0.7,
   })
 
   useEffect(() => {
-    if (isInView) {
-      animate([['div', { opacity: [0, 1] }, { duration: 0.9, delay: 0.3 }]])
-    }
+    const animation: AnimationSequence = isInView
+      ? [
+          ['div', { opacity: [1] }, { duration: 0.3, delay: 0.2 }],
+          ['.tags', { filter: ['blur(12px)', 'blur(0px)'] }, { duration: 0.3 }],
+        ]
+      : [
+          ['div', { opacity: [0] }, { duration: 0.3, delay: 0.2 }],
+          ['.tags', { filter: ['blur(0px)', 'blur(12px)'] }, { duration: 0.3 }],
+        ]
+
+    animate(animation)
   }, [isInView, animate])
 
   return (
@@ -51,7 +60,7 @@ export function ExperienceCard({
           {tags.map((t, idx) => {
             return (
               <span
-                className="px-2 py-1 bg-santa-juniper rounded-full text-santa-plum text-sm"
+                className="px-2 py-1 bg-santa-juniper rounded-full text-santa-plum text-sm tags"
                 key={`${t}-${idx}`}
               >
                 {t}
