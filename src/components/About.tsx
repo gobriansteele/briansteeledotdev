@@ -38,11 +38,18 @@ export function About() {
           .
         </p>
         <p>
-          These days I&#39;m spending my time at Honor Education as a lead
-          software engineer tasked with constructing the learner and creator
-          apps as well as an admin tool. I spend my days in TypeScript building
-          out a NextJS app backed up by Java api&#39;s, a Postgres DB all
-          deployed on AWS infra.
+          These days I&#39;m spending my time at{' '}
+          <a
+            href="https://honor.education"
+            target="_blank"
+            className="font-medium text-white"
+          >
+            Honor Education
+          </a>{' '}
+          as a lead software engineer tasked with constructing the learner and
+          creator apps as well as an admin tool. I spend my days in TypeScript
+          building out a NextJS app backed up by Java api&#39;s, a Postgres DB
+          all deployed on AWS infra.
         </p>
         <p>
           When not writing code or designing solutions to engineering challenges

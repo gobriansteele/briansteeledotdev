@@ -1,3 +1,8 @@
+'use client'
+
+import { useEffect } from 'react'
+import { useInView, useAnimate } from 'framer-motion'
+
 type Props = {
   startDate: string
   endDate: string
@@ -13,10 +18,26 @@ export function ExperienceCard({
   company,
   role,
   tags,
+
   description,
 }: Props) {
+  const [scope, animate] = useAnimate()
+
+  const isInView = useInView(scope, {
+    once: true,
+  })
+
+  useEffect(() => {
+    if (isInView) {
+      animate([['div', { opacity: [0, 1] }, { duration: 0.9, delay: 0.3 }]])
+    }
+  }, [isInView, animate])
+
   return (
-    <div className="flex flex-col md:flex gap-6 max-w-xl  hover:bg-santa-gray/10 duration-500 transition-colors md:p-4 rounded-md cursor-pointer">
+    <div
+      ref={scope}
+      className="flex flex-col md:flex gap-6 max-w-xl  hover:bg-santa-gray/10 duration-500 transition-colors md:p-4 rounded-md cursor-pointer"
+    >
       <div className="w-full md:w-1/4">
         <p className="uppercase text-sm font-semibold">{`${startDate}-${endDate}`}</p>
       </div>
