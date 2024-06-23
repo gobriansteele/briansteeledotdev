@@ -6,7 +6,10 @@ export function useMouseHighlight() {
   )
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      const pos = [e.clientX, e.clientY + window.scrollY] as [number, number]
+      const pos = [e.clientX, e.clientY + window.scrollY] satisfies [
+        number,
+        number
+      ]
       setMousePosition(pos)
     }
 
@@ -17,9 +20,7 @@ export function useMouseHighlight() {
     }
   }, [])
 
-  const styleObj = {
+  return {
     background: `radial-gradient(600px at ${mousePosition?.[0]}px ${mousePosition?.[1]}px, rgba(216, 211, 219, 0.15), transparent 80%)`,
   }
-
-  return styleObj
 }
