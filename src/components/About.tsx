@@ -46,10 +46,10 @@ export function About() {
           >
             Honor Education
           </a>{' '}
-          as a lead software engineer tasked with constructing the learner and
-          creator apps as well as an admin tool. I spend my days in TypeScript
-          building out a NextJS app backed up by Java api&#39;s, a Postgres DB
-          all deployed on AWS infra.
+          as a principal software engineer working on reseearch projects and
+          leveraging AI to make the platform better. I spend my days working
+          across the entire platform-from mative clients to the Java backend
+          with TypesScript and Python thrown in for good measure.
         </p>
         <p>
           When not writing code or designing solutions to engineering challenges
@@ -61,8 +61,8 @@ export function About() {
           >
             on my bike
           </a>{' '}
-          on the local trails here in Santa Fe, NM. I&#39;ve also been known to
-          frequent great coffee shops as well as breweries with good IPAs.
+          here in Minneapolis, MN. I&#39;ve also been known to frequent great
+          coffee shops as well as breweries with good IPAs.
         </p>
       </div>
     </section>
