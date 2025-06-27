@@ -1,7 +1,7 @@
 export const experience = [
   {
     startDate: '2024',
-    endDate: '2024',
+    endDate: 'Present',
     company: 'Honor Education',
     role: 'Principal Software Engineer',
     tags: [
