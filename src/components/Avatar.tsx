@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import profile from '../../public/brian_profile_orange_small.jpg'
+import profile from '../../public/brian_profile_bike.jpg'
 
 export function Avatar() {
   return (
