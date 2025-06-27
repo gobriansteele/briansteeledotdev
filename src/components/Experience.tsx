@@ -10,8 +10,8 @@ export function Experience() {
         </h2>
       </div>
       <div className="flex flex-col gap-8 md:gap-4">
-        {experience.map((ex) => {
-          return <ExperienceCard {...ex} key={ex.company} />
+        {experience.map((ex, idx) => {
+          return <ExperienceCard {...ex} key={`${ex.company}-${idx}`} />
         })}
       </div>
     </section>

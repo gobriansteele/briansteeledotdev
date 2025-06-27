@@ -8,10 +8,7 @@ type Props = {
 export const MainContainer = ({ children }: Props) => {
   const styleObj = useMouseHighlight()
   return (
-    <div
-      style={styleObj}
-      className="pointer-events-none  inset-0 z-30 transition duration-300 lg:absolute"
-    >
+    <div className="inset-0 z-30 transition duration-300" style={styleObj}>
       {children}
     </div>
   )
