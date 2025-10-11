@@ -30,7 +30,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-// Jackie $2b$12$LPN2lgn09Z76R.6eWCiRTeoP0EFjWZVQ3/VG1xxZkcCufOjaxVaH.
-// Brian  $2b$12$N6x4MCDxJAls8HiFSh3Rv.bucxs9siNBudqNMWJs/3Ts3J49JFNw.
-// Test   $2b$12$SSTVkj2xf.ZRKeySyamaYuQzLOhEnq3GG51jy4lGpdZXBWwufqlV6
