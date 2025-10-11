@@ -7,19 +7,46 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
-        'santa-gray': '#c8cdd5',
-        'santa-juniper': '#acb4a1',
-        'santa-plum': '#574F63',
-        'santa-sky': '#8c8cb4',
-        'santa-red': '#bc745c',
+        background: {
+          DEFAULT: '#0f172a', // slate-900
+          secondary: '#1e293b', // slate-800
+          tertiary: '#334155', // slate-700
+        },
+        foreground: {
+          DEFAULT: '#f1f5f9', // slate-100
+          secondary: '#cbd5e1', // slate-300
+          muted: '#94a3b8', // slate-400
+        },
+        accent: {
+          primary: '#3b82f6', // blue-500
+          secondary: '#8b5cf6', // violet-500
+          hover: '#2563eb', // blue-600
+        },
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            color: '#f1f5f9',
+            a: {
+              color: '#3b82f6',
+              '&:hover': {
+                color: '#2563eb',
+              },
+            },
+            h1: { color: '#f1f5f9' },
+            h2: { color: '#f1f5f9' },
+            h3: { color: '#f1f5f9' },
+            h4: { color: '#f1f5f9' },
+            strong: { color: '#f1f5f9' },
+            code: { color: '#f1f5f9' },
+            blockquote: { color: '#cbd5e1' },
+          },
+        },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

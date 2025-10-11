@@ -2,20 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: ;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 0, 0, 0;
-}
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  a {
+    @apply text-accent-primary hover:text-accent-hover transition-colors;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground font-bold;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
+@layer components {
+  .prose-invert {
+    @apply prose prose-slate max-w-none;
+  }
+
+  .link-underline {
+    @apply underline decoration-2 decoration-accent-primary underline-offset-4 hover:decoration-accent-hover transition-colors;
+  }
 }
+
+/* Code highlighting */
+pre[class*="language-"] {
+  @apply bg-slate-800 rounded-lg p-4 overflow-x-auto;
+}
+
+code[class*="language-"] {
+  @apply text-sm;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  @apply bg-accent-primary/30;
+}
+
+/* Import syntax highlighting theme */
+@import 'highlight.js/styles/github-dark.css';

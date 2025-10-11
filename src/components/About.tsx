@@ -4,65 +4,41 @@ export function About() {
       <div className="h-16 flex flex-col justify-center">
         <h2 className="uppercase font-bold tracking-widest text-lg">About</h2>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-6 text-foreground-secondary leading-relaxed">
         <p>
-          I&#39;m an experienced full-stack web developer with a background in
-          graphic design. I got started in web-development in 2010 when I
-          started &quot;Viewing page source&quot; and got very interested in not
-          only designing things for the web, but also building them. I&#39;ve
-          progressed through several companies from large enterprises to small
-          startups. My history includes time at{' '}
-          <a
-            href="https://ameriprise.com"
-            target="_blank"
-            className="font-medium text-white"
-          >
+          I'm the <span className="text-foreground font-semibold">Head of AI at Honor Education</span>,
+          where I lead research projects and leverage artificial intelligence to transform our platform.
+          With a background in full-stack development and graphic design, I bring a unique perspective
+          to building AI-powered solutions.
+        </p>
+        <p>
+          My journey in tech started in 2010 when I got curious about "viewing page source" and fell
+          in love with not only designing for the web, but building it. Since then, I've progressed
+          through companies ranging from large enterprises to innovative startups, including{' '}
+          <a href="https://ameriprise.com" target="_blank" className="link-underline">
             Ameriprise Financial
-          </a>
-          ,{' '}
-          <a
-            href="https://vsco.co"
-            target="_blank"
-            className="font-medium text-white"
-          >
+          </a>,{' '}
+          <a href="https://vsco.co" target="_blank" className="link-underline">
             VSCO
-          </a>{' '}
-          and{' '}
-          <a
-            href="https://docusign.com"
-            target="_blank"
-            className="font-medium text-white"
-          >
+          </a>, and{' '}
+          <a href="https://docusign.com" target="_blank" className="link-underline">
             DocuSign
-          </a>
-          .
+          </a>.
         </p>
         <p>
-          These days I&#39;m spending my time at{' '}
-          <a
-            href="https://honor.education"
-            target="_blank"
-            className="font-medium text-white"
-          >
+          These days, I spend my time working across the entire platform at{' '}
+          <a href="https://honor.education" target="_blank" className="link-underline">
             Honor Education
-          </a>{' '}
-          as a principal software engineer working on reseearch projects and
-          leveraging AI to make the platform better. I spend my days working
-          across the entire platform-from mative clients to the Java backend
-          with TypesScript and Python thrown in for good measure.
+          </a>—from native clients to Java backends, with TypeScript, Python, and AI models
+          in between. I'm passionate about the intersection of engineering leadership and
+          cutting-edge AI technology.
         </p>
         <p>
-          When not writing code or designing solutions to engineering challenges
-          you can find me{' '}
-          <a
-            href="https://www.strava.com/athletes/33433580"
-            target="_blank"
-            className="font-medium text-white"
-          >
+          When I'm not writing code or leading AI initiatives, you can find me{' '}
+          <a href="https://www.strava.com/athletes/33433580" target="_blank" className="link-underline">
             on my bike
           </a>{' '}
-          here in Minneapolis, MN. I&#39;ve also been known to frequent great
-          coffee shops as well as breweries with good IPAs.
+          exploring Minneapolis, MN, or discovering great coffee shops and breweries with excellent IPAs.
         </p>
       </div>
     </section>
