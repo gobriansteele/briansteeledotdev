@@ -9,13 +9,14 @@ interface SearchParams {
   tag?: string
 }
 
-export default function BlogPage({
+export default async function BlogPage({
   searchParams
 }: {
   searchParams: SearchParams
 }) {
+  const resolvedParams = await searchParams
   // Using mock data for now - Engineer 1 will replace with Supabase queries
-  const posts = getMockPosts({ tag: searchParams.tag })
+  const posts = getMockPosts({ tag: resolvedParams.tag })
   const allTags = mockTags
 
   return (
@@ -30,13 +31,13 @@ export default function BlogPage({
       {/* Tag filter */}
       <div className="mb-8 flex flex-wrap gap-2">
         <Link href="/blog">
-          <Badge variant={!searchParams.tag ? 'primary' : 'default'}>
+          <Badge variant={!resolvedParams.tag ? 'primary' : 'default'}>
             All
           </Badge>
         </Link>
         {allTags?.map((tag) => (
           <Link key={tag.id} href={`/blog?tag=${tag.slug}`}>
-            <Badge variant={searchParams.tag === tag.slug ? 'primary' : 'default'}>
+            <Badge variant={resolvedParams.tag === tag.slug ? 'primary' : 'default'}>
               {tag.name}
             </Badge>
           </Link>
@@ -60,7 +61,7 @@ export default function BlogPage({
                 </div>
               )}
               <div className="flex items-center gap-2 mb-3">
-                {post.post_tags.map((pt: any) => (
+                {post.post_tags.map((pt) => (
                   <Badge key={pt.tags.id}>{pt.tags.name}</Badge>
                 ))}
               </div>

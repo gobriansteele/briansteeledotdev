@@ -5,13 +5,13 @@ interface BadgeProps {
 
 export function Badge({ children, variant = 'default' }: BadgeProps) {
   const variants = {
-    default: 'bg-slate-700 text-slate-300',
-    primary: 'bg-blue-900 text-blue-300',
-    secondary: 'bg-purple-900 text-purple-300',
+    default: 'bg-background-tertiary text-foreground-secondary',
+    primary: 'bg-accent-primary/20 text-accent-primary',
+    secondary: 'bg-accent-secondary/20 text-accent-secondary',
   }
 
   return (
-    <span className={`inline-block px-3 py-1 text-xs rounded-full ${variants[variant]}`}>
+    <span className={`inline-block px-3 py-1 text-xs rounded-full font-medium ${variants[variant]}`}>
       {children}
     </span>
   )
