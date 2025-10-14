@@ -1,9 +1,8 @@
 import { MetadataRoute } from 'next'
-import { getMockPosts } from '@/lib/mockData'
+import { getPublishedPosts } from '@/lib/queries/posts'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  // Using mock data for now - Engineer 1 will replace with Supabase queries
-  const posts = getMockPosts()
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getPublishedPosts()
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://briansteele.dev'
 

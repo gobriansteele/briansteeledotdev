@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Navigation } from '@/components/Navigation'
 import { formatDistance } from 'date-fns'
 import Image from 'next/image'
-import { getMockPosts, mockTags } from '@/lib/mockData'
+import { getPublishedPosts, getAllTags } from '@/lib/queries/posts'
 
 interface SearchParams {
   tag?: string
@@ -16,9 +16,8 @@ export default async function BlogPage({
   searchParams: Promise<SearchParams>
 }) {
   const resolvedParams = await searchParams
-  // Using mock data for now - Engineer 1 will replace with Supabase queries
-  const posts = getMockPosts({ tag: resolvedParams.tag })
-  const allTags = mockTags
+  const posts = await getPublishedPosts({ tagSlug: resolvedParams.tag })
+  const allTags = await getAllTags()
 
   return (
     <div className="max-w-content mx-auto px-6 py-12">

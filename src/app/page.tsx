@@ -2,11 +2,10 @@ import { About, Experience } from '@/components'
 import { WhatIDo } from '@/components/WhatIDo'
 import { RecentPosts } from '@/components/RecentPosts'
 import { Header } from '@/components/Header'
-import { getMockPosts } from '@/lib/mockData'
+import { getPublishedPosts } from '@/lib/queries/posts'
 
-export default function Home() {
-  // Using mock data for now - Engineer 1 will replace with Supabase queries
-  const recentPosts = getMockPosts({ limit: 3 })
+export default async function Home() {
+  const recentPosts = await getPublishedPosts({ limit: 3 })
 
   return (
     <div className="max-w-content mx-auto px-6 py-12">

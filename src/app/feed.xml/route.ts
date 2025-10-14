@@ -1,8 +1,7 @@
-import { getMockPosts } from '@/lib/mockData'
+import { getPublishedPosts } from '@/lib/queries/posts'
 
 export async function GET() {
-  // Using mock data for now - Engineer 1 will replace with Supabase queries
-  const posts = getMockPosts({ limit: 20 })
+  const posts = await getPublishedPosts({ limit: 20 })
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://briansteele.dev'
 

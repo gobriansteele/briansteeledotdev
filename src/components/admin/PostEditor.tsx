@@ -3,6 +3,7 @@
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { createPost, updatePost, type PostFormData } from '@/app/admin/(protected)/posts/actions'
+import { CreateTagModal } from './CreateTagModal'
 
 type Post = {
   id: string
@@ -29,6 +30,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
   const [error, setError] = useState<string | null>(null)
+  const [isCreateTagModalOpen, setIsCreateTagModalOpen] = useState(false)
 
   const [formData, setFormData] = useState({
     title: post?.title ?? '',
@@ -187,7 +189,19 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
               {tag.name}
             </button>
           ))}
+          <button
+            type="button"
+            onClick={() => setIsCreateTagModalOpen(true)}
+            className="px-3 py-1 rounded-full text-sm border-2 border-dashed border-slate-600 text-slate-400 hover:border-blue-500 hover:text-blue-400 transition-colors"
+          >
+            + Create new tag
+          </button>
         </div>
+        {tags.length === 0 && (
+          <p className="mt-2 text-sm text-slate-400">
+            No tags available yet. Create your first tag to get started.
+          </p>
+        )}
       </div>
 
       <div className="flex items-center">
@@ -220,6 +234,12 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           Cancel
         </button>
       </div>
+
+      {/* Create Tag Modal */}
+      <CreateTagModal
+        isOpen={isCreateTagModalOpen}
+        onClose={() => setIsCreateTagModalOpen(false)}
+      />
     </form>
   )
 }

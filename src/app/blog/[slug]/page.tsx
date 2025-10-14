@@ -5,20 +5,15 @@ import { Badge } from '@/components/ui/Badge'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import { getMockPost, getMockPosts } from '@/lib/mockData'
+import { getPostBySlug, getAllPublishedSlugs, getRelatedPosts } from '@/lib/queries/posts'
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
-// Using mock data for now - Engineer 1 will replace with Supabase queries
-async function getPost(slug: string) {
-  return getMockPost(slug)
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const post = await getPost(slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     return {
@@ -47,19 +42,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  // Using mock data for now - Engineer 1 will replace with Supabase queries
-  const posts = getMockPosts()
+  const slugs = await getAllPublishedSlugs()
 
-  return (
-    posts?.map((post) => ({
-      slug: post.slug,
-    })) || []
-  )
+  return slugs.map((slug) => ({
+    slug,
+  }))
 }
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params
-  const post = await getPost(slug)
+  const post = await getPostBySlug(slug)
 
   if (!post) {
     notFound()
@@ -68,13 +60,9 @@ export default async function BlogPostPage({ params }: Props) {
   const mdxContent = await serializeMDX(post.content)
   const readingTime = getReadingTime(post.content)
 
-  // Get related posts by tags (simplified for mock data)
+  // Get related posts by tags
   const tagIds = post.post_tags.map((pt) => pt.tags.id)
-  const allPosts = getMockPosts()
-  const relatedPosts = allPosts
-    .filter((p) => p.id !== post.id)
-    .filter((p) => p.post_tags.some((pt) => tagIds.includes(pt.tags.id)))
-    .slice(0, 3)
+  const relatedPosts = await getRelatedPosts(post.id, tagIds, 3)
 
   return (
     <div className="max-w-content mx-auto px-6 py-12">
