@@ -9,38 +9,90 @@ module.exports = {
     extend: {
       colors: {
         background: {
-          DEFAULT: '#0f172a', // slate-900
-          secondary: '#1e293b', // slate-800
-          tertiary: '#334155', // slate-700
+          DEFAULT: '#ffffff', // Pure white
+          secondary: '#f8f9fa', // Very light gray for cards
+          tertiary: '#e9ecef', // Light gray for hover states
         },
         foreground: {
-          DEFAULT: '#f1f5f9', // slate-100
-          secondary: '#cbd5e1', // slate-300
-          muted: '#94a3b8', // slate-400
+          DEFAULT: '#2e3440', // Warm dark gray (primary text)
+          secondary: '#4c566a', // Medium gray (secondary text)
+          muted: '#6c757d', // Muted gray (tertiary text)
         },
         accent: {
-          primary: '#3b82f6', // blue-500
-          secondary: '#8b5cf6', // violet-500
-          hover: '#2563eb', // blue-600
+          primary: '#5e81ac', // Soft blue (links, primary actions)
+          secondary: '#88c0d0', // Teal (highlights)
+          tertiary: '#81a1c1', // Light blue (alt accent)
+          hover: '#4c6a8a', // Darker blue (hover state)
         },
+        border: {
+          DEFAULT: '#dee2e6', // Light border
+          secondary: '#adb5bd', // Medium border
+        },
+        success: '#a3be8c', // Sage green
+        warning: '#ebcb8b', // Warm yellow
+        error: '#bf616a', // Muted red
+        info: '#88c0d0', // Teal
+      },
+      maxWidth: {
+        'content': '780px', // Match samwho.dev
       },
       typography: {
         DEFAULT: {
           css: {
-            color: '#f1f5f9',
+            color: '#2e3440',
+            maxWidth: 'none',
             a: {
-              color: '#3b82f6',
+              color: '#5e81ac',
+              textDecoration: 'underline',
+              textDecorationColor: '#5e81ac',
+              textUnderlineOffset: '3px',
               '&:hover': {
-                color: '#2563eb',
+                color: '#4c6a8a',
+                textDecorationColor: '#4c6a8a',
               },
             },
-            h1: { color: '#f1f5f9' },
-            h2: { color: '#f1f5f9' },
-            h3: { color: '#f1f5f9' },
-            h4: { color: '#f1f5f9' },
-            strong: { color: '#f1f5f9' },
-            code: { color: '#f1f5f9' },
-            blockquote: { color: '#cbd5e1' },
+            h1: {
+              color: '#2e3440',
+              fontWeight: '700',
+            },
+            h2: {
+              color: '#2e3440',
+              fontWeight: '700',
+              fontSize: '2rem',
+            },
+            h3: {
+              color: '#2e3440',
+              fontWeight: '600',
+            },
+            h4: {
+              color: '#2e3440',
+              fontWeight: '600',
+            },
+            strong: {
+              color: '#2e3440',
+              fontWeight: '600',
+            },
+            code: {
+              color: '#2e3440',
+              backgroundColor: '#f8f9fa',
+              padding: '0.125rem 0.375rem',
+              borderRadius: '0.25rem',
+              fontWeight: '500',
+            },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            pre: {
+              backgroundColor: '#2e3440',
+              color: '#d8dee9',
+            },
+            blockquote: {
+              color: '#4c566a',
+              borderLeftColor: '#5e81ac',
+            },
           },
         },
       },

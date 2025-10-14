@@ -1,37 +1,41 @@
-import { GitHubIcon } from './GitHubIcon'
-import { LinkedInIcon } from './LinkedInIcon'
-import { EmailIcon } from './EmailIcon'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
-const socialComponents = [
+const socials = [
   {
     name: 'GitHub',
-    link: 'https://github.com/gobriansteele',
-    Icon: GitHubIcon,
+    href: 'https://github.com/gobriansteele',
+    icon: Github,
   },
   {
     name: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/gobriansteele/',
-    Icon: LinkedInIcon,
+    href: 'https://www.linkedin.com/in/gobriansteele/',
+    icon: Linkedin,
   },
   {
     name: 'Email',
-    link: 'mailto:hello@briansteele.dev',
-    Icon: EmailIcon,
+    href: 'mailto:hello@briansteele.dev',
+    icon: Mail,
   },
 ]
 
 export function SocialContacts() {
   return (
-    <ul className="flex gap-4">
-      {socialComponents.map(({ name, Icon, link }) => {
+    <nav className="flex items-center gap-6">
+      {socials.map((social) => {
+        const Icon = social.icon
         return (
-          <li key={name}>
-            <a href={link}>
-              <Icon />
-            </a>
-          </li>
+          <a
+            key={social.name}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground-secondary hover:text-accent-primary transition-colors"
+            aria-label={social.name}
+          >
+            <Icon size={24} />
+          </a>
         )
       })}
-    </ul>
+    </nav>
   )
 }

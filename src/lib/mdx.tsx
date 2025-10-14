@@ -1,6 +1,10 @@
-'use client'
-
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { compileMDX } from 'next-mdx-remote/rsc'
+import rehypeHighlight from 'rehype-highlight'
+import rehypeSlug from 'rehype-slug'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import remarkGfm from 'remark-gfm'
+import matter from 'gray-matter'
+import readingTime from 'reading-time'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ComponentPropsWithoutRef } from 'react'
@@ -54,14 +58,38 @@ const components = {
   ),
 }
 
-interface MDXContentProps {
-  source: MDXRemoteSerializeResult
+export async function serializeMDX(content: string) {
+  const { content: mdxContent } = await compileMDX({
+    source: content,
+    components,
+    options: {
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+        rehypePlugins: [
+          rehypeHighlight,
+          rehypeSlug,
+          [
+            rehypeAutolinkHeadings,
+            {
+              behavior: 'wrap',
+              properties: {
+                className: ['anchor'],
+              },
+            },
+          ],
+        ],
+      },
+    },
+  })
+
+  return mdxContent
 }
 
-export function MDXContent({ source }: MDXContentProps) {
-  return (
-    <div className="prose prose-lg prose-light max-w-none">
-      <MDXRemote {...source} components={components} />
-    </div>
-  )
+export function getReadingTime(content: string) {
+  return readingTime(content)
+}
+
+export function extractFrontmatter(content: string) {
+  const { data, content: markdownContent } = matter(content)
+  return { frontmatter: data, content: markdownContent }
 }

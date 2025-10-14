@@ -25,10 +25,9 @@ const areas = [
 
 export function WhatIDo() {
   return (
-    <section id="what-i-do" className="py-12">
-      <div className="h-16 flex flex-col justify-center">
-        <h2 className="uppercase font-bold tracking-widest text-lg">What I Do</h2>
-      </div>
+    <section id="what-i-do">
+      <h2 className="section-heading">💼 What I Do</h2>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {areas.map((area) => (
           <Card key={area.title} hover>

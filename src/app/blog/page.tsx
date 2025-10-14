@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
+import { Navigation } from '@/components/Navigation'
 import { formatDistance } from 'date-fns'
 import Image from 'next/image'
 import { getMockPosts, mockTags } from '@/lib/mockData'
@@ -12,7 +13,7 @@ interface SearchParams {
 export default async function BlogPage({
   searchParams
 }: {
-  searchParams: SearchParams
+  searchParams: Promise<SearchParams>
 }) {
   const resolvedParams = await searchParams
   // Using mock data for now - Engineer 1 will replace with Supabase queries
@@ -20,8 +21,11 @@ export default async function BlogPage({
   const allTags = mockTags
 
   return (
-    <div>
-      <div className="mb-12">
+    <div className="max-w-content mx-auto px-6 py-12">
+      <Navigation />
+
+      {/* Header */}
+      <div className="mb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
         <p className="text-foreground-secondary text-lg">
           Thoughts on AI, leadership, and software engineering.
@@ -29,7 +33,7 @@ export default async function BlogPage({
       </div>
 
       {/* Tag filter */}
-      <div className="mb-8 flex flex-wrap gap-2">
+      <div className="mb-8 flex flex-wrap justify-center gap-2">
         <Link href="/blog">
           <Badge variant={!resolvedParams.tag ? 'primary' : 'default'}>
             All

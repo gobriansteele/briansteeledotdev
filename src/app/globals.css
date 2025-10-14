@@ -5,30 +5,50 @@
 @layer base {
   body {
     @apply bg-background text-foreground antialiased;
+    font-size: 18px;
+    line-height: 1.6;
   }
 
   a {
-    @apply text-accent-primary hover:text-accent-hover transition-colors;
+    @apply text-accent-primary hover:text-accent-hover transition-colors duration-200;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-foreground font-bold;
+  h1 {
+    @apply text-foreground font-bold text-4xl mb-4;
+  }
+
+  h2 {
+    @apply text-foreground font-bold text-3xl mb-3;
+  }
+
+  h3 {
+    @apply text-foreground font-semibold text-2xl mb-2;
+  }
+
+  h4, h5, h6 {
+    @apply text-foreground font-semibold;
   }
 }
 
 @layer components {
-  .prose-invert {
-    @apply prose prose-slate max-w-none;
+  .section-heading {
+    @apply text-2xl font-bold text-foreground mb-6;
   }
 
   .link-underline {
-    @apply underline decoration-2 decoration-accent-primary underline-offset-4 hover:decoration-accent-hover transition-colors;
+    @apply underline decoration-2 decoration-accent-primary
+           underline-offset-4 hover:decoration-accent-hover
+           transition-colors duration-200;
+  }
+
+  .prose-light {
+    @apply prose prose-lg max-w-none;
   }
 }
 
-/* Code highlighting */
+/* Code highlighting for light theme */
 pre[class*="language-"] {
-  @apply bg-slate-800 rounded-lg p-4 overflow-x-auto;
+  @apply bg-[#2e3440] rounded-lg p-4 overflow-x-auto text-sm;
 }
 
 code[class*="language-"] {
@@ -42,8 +62,8 @@ html {
 
 /* Selection */
 ::selection {
-  @apply bg-accent-primary/30;
+  @apply bg-accent-secondary/30;
 }
 
-/* Import syntax highlighting theme */
-@import 'highlight.js/styles/github-dark.css';
+/* Import syntax highlighting theme - use a light-friendly dark theme for code */
+@import 'highlight.js/styles/nord.css';

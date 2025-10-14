@@ -14,19 +14,23 @@ export function RecentPosts({ posts }: RecentPostsProps) {
   }
 
   return (
-    <section id="recent-posts" className="py-12">
+    <section id="recent-posts">
       <div className="flex justify-between items-center mb-6">
-        <h2 className="uppercase font-bold tracking-widest text-lg">Recent Posts</h2>
-        <Link href="/blog" className="text-accent-primary hover:text-accent-hover text-sm">
+        <h2 className="section-heading mb-0">✍️ Recent Posts</h2>
+        <Link
+          href="/blog"
+          className="text-accent-primary hover:text-accent-hover text-sm font-medium"
+        >
           View all →
         </Link>
       </div>
+
       <div className="space-y-6">
         {posts.map((post) => (
           <Card key={post.id} hover>
             <Link href={`/blog/${post.slug}`}>
               <div>
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-3">
                   {post.post_tags.map((pt) => (
                     <Badge key={pt.tags.name}>{pt.tags.name}</Badge>
                   ))}
@@ -34,7 +38,7 @@ export function RecentPosts({ posts }: RecentPostsProps) {
                 <h3 className="text-xl font-bold text-foreground mb-2 hover:text-accent-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-foreground-secondary mb-2">{post.excerpt}</p>
+                <p className="text-foreground-secondary mb-3">{post.excerpt}</p>
                 <p className="text-sm text-foreground-muted">
                   {formatDistance(new Date(post.published_at), new Date(), { addSuffix: true })}
                 </p>
