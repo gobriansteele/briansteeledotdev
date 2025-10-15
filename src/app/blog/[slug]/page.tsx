@@ -5,7 +5,11 @@ import { Badge } from '@/components/ui/Badge'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import { getPostBySlug, getAllPublishedSlugs, getRelatedPosts } from '@/lib/queries/posts'
+import {
+  getPostBySlug,
+  getAllPublishedSlugs,
+  getRelatedPosts,
+} from '@/lib/queries/posts'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -28,15 +32,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      publishedTime: post.published_at,
-      authors: [post.author],
-      images: post.cover_image ? [post.cover_image] : [],
+      publishedTime: post.published_at || '',
+      authors: [post.author || ''],
+      images: post.featured_image_url ? [post.featured_image_url] : [],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.excerpt,
-      images: post.cover_image ? [post.cover_image] : [],
+      images: post.featured_image_url ? [post.featured_image_url] : [],
     },
   }
 }
@@ -69,10 +73,10 @@ export default async function BlogPostPage({ params }: Props) {
       <article>
         {/* Header */}
         <header className="mb-8 md:mb-12">
-          {post.cover_image && (
+          {post.featured_image_url && (
             <div className="mb-6 md:mb-8 -mx-6">
               <Image
-                src={post.cover_image}
+                src={post.featured_image_url}
                 alt={post.title}
                 width={1200}
                 height={600}
@@ -95,8 +99,8 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-3 md:gap-4 text-foreground-secondary text-sm">
             <span>{post.author}</span>
             <span className="hidden sm:inline">•</span>
-            <time dateTime={post.published_at}>
-              {format(new Date(post.published_at), 'MMMM d, yyyy')}
+            <time dateTime={post.published_at || ''}>
+              {format(new Date(post.published_at || ''), 'MMMM d, yyyy')}
             </time>
             <span className="hidden sm:inline">•</span>
             <span>{readingTime.text}</span>
@@ -111,7 +115,9 @@ export default async function BlogPostPage({ params }: Props) {
         {/* Related posts */}
         {relatedPosts && relatedPosts.length > 0 && (
           <div className="border-t border-border pt-8 mt-12">
-            <h2 className="text-2xl md:text-3xl font-bold mb-6">Related Posts</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
+              Related Posts
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {relatedPosts.map((related) => (
                 <Link

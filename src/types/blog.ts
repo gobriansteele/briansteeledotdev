@@ -13,12 +13,12 @@ export interface Post {
   title: string
   excerpt: string
   content: string
-  cover_image: string | null
+  featured_image_url: string | null
   published: boolean
-  published_at: string
+  published_at: string | null
   created_at: string
   updated_at: string
-  author: string
+  author: string | null
 }
 
 export interface PostTag {

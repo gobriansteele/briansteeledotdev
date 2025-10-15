@@ -1,5 +1,13 @@
 export const experience = [
   {
+    startDate: '2025',
+    endDate: 'Present',
+    company: 'Honor Education',
+    role: 'Head of AI',
+    tags: ['Python', 'Leadership', 'AI'],
+    description: `Working as a head of AI with Honor. Sorting out how to leverage AI effectively on the platform and in our day to day work.`,
+  } as const,
+  {
     startDate: '2024',
     endDate: 'Present',
     company: 'Honor Education',

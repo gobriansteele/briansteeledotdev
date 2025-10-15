@@ -18,7 +18,7 @@ export async function GET() {
       <title>${escapeXml(post.title)}</title>
       <link>${baseUrl}/blog/${post.slug}</link>
       <guid>${baseUrl}/blog/${post.slug}</guid>
-      <pubDate>${new Date(post.published_at).toUTCString()}</pubDate>
+      <pubDate>${post.published_at ? new Date(post.published_at).toUTCString() : new Date(post.created_at).toUTCString()}</pubDate>
       <description>${escapeXml(post.excerpt)}</description>
     </item>
     `).join('')}

@@ -52,10 +52,10 @@ export default async function BlogPage({
         {posts?.map((post) => (
           <Card key={post.id} hover>
             <Link href={`/blog/${post.slug}`}>
-              {post.cover_image && (
+              {post.featured_image_url && (
                 <div className="mb-4 -mx-6 -mt-6">
                   <Image
-                    src={post.cover_image}
+                    src={post.featured_image_url}
                     alt={post.title}
                     width={600}
                     height={300}
@@ -73,7 +73,7 @@ export default async function BlogPage({
               </h2>
               <p className="text-foreground-secondary mb-3">{post.excerpt}</p>
               <p className="text-sm text-foreground-muted">
-                {formatDistance(new Date(post.published_at), new Date(), { addSuffix: true })}
+                {post.published_at && formatDistance(new Date(post.published_at), new Date(), { addSuffix: true })}
               </p>
             </Link>
           </Card>

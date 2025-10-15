@@ -40,7 +40,7 @@ export function RecentPosts({ posts }: RecentPostsProps) {
                 </h3>
                 <p className="text-foreground-secondary mb-3">{post.excerpt}</p>
                 <p className="text-sm text-foreground-muted">
-                  {formatDistance(new Date(post.published_at), new Date(), { addSuffix: true })}
+                  {post.published_at && formatDistance(new Date(post.published_at), new Date(), { addSuffix: true })}
                 </p>
               </div>
             </Link>

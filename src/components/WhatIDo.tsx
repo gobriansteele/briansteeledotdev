@@ -3,23 +3,27 @@ import { Card } from './ui/Card'
 const areas = [
   {
     title: 'AI Leadership',
-    description: 'Leading research and development of AI solutions that transform educational technology.',
+    description:
+      'Leading research and development of AI solutions that transform educational technology.',
     icon: '🤖',
   },
   {
-    title: 'Engineering Management',
-    description: 'Building and mentoring high-performing engineering teams across the full stack.',
-    icon: '👥',
-  },
-  {
     title: 'Full-Stack Development',
-    description: 'Architecting and building scalable systems from native apps to backend services.',
+    description:
+      'Architecting and building scalable systems from native apps to backend services.',
     icon: '💻',
   },
   {
     title: 'Research & Innovation',
-    description: 'Exploring cutting-edge technologies and translating research into production systems.',
+    description:
+      'Exploring cutting-edge technologies and translating research into production systems.',
     icon: '🔬',
+  },
+  {
+    title: 'Ride My Bike',
+    description:
+      "Gotta ride my bike. It's good for my health (and all my relationships).",
+    icon: '🚴',
   },
 ]
 
@@ -32,7 +36,9 @@ export function WhatIDo() {
         {areas.map((area) => (
           <Card key={area.title} hover>
             <div className="text-4xl mb-4">{area.icon}</div>
-            <h3 className="text-xl font-bold text-foreground mb-2">{area.title}</h3>
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              {area.title}
+            </h3>
             <p className="text-foreground-secondary">{area.description}</p>
           </Card>
         ))}

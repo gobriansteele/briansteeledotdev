@@ -34,7 +34,9 @@ export default async function AdminDashboard() {
       <div className="grid grid-cols-3 gap-6 mb-8">
         <div className="bg-slate-800 p-6 rounded-lg border border-slate-700">
           <h3 className="text-slate-400 text-sm font-medium">Total Posts</h3>
-          <p className="text-3xl font-bold text-white mt-2">{totalPosts || 0}</p>
+          <p className="text-3xl font-bold text-white mt-2">
+            {totalPosts || 0}
+          </p>
         </div>
         <div className="bg-slate-800 p-6 rounded-lg border border-slate-700">
           <h3 className="text-slate-400 text-sm font-medium">Published</h3>
@@ -63,14 +65,15 @@ export default async function AdminDashboard() {
         </div>
         <div className="space-y-3">
           {recentPosts?.map((post) => (
-            <div
+            <Link
+              href={`/admin/posts/${post.id}/edit`}
               key={post.id}
               className="flex justify-between items-center p-3 bg-slate-700 rounded"
             >
               <div>
                 <h3 className="text-white font-medium">{post.title}</h3>
                 <p className="text-sm text-slate-400">
-                  {new Date(post.created_at).toLocaleDateString()}
+                  {new Date(post.created_at || '').toLocaleDateString()}
                 </p>
               </div>
               <span
@@ -82,7 +85,7 @@ export default async function AdminDashboard() {
               >
                 {post.published ? 'Published' : 'Draft'}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
