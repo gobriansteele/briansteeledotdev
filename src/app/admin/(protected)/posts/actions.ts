@@ -27,6 +27,7 @@ export async function createPost(formData: PostFormData) {
       content: formData.content,
       featured_image_url: formData.featured_image_url,
       published: formData.published,
+      published_at: formData.published ? new Date().toISOString() : null,
     })
     .select()
     .single()
@@ -58,6 +59,13 @@ export async function createPost(formData: PostFormData) {
 export async function updatePost(postId: string, formData: PostFormData) {
   const supabase = await createClient()
 
+  // Get current post to check if we need to set published_at
+  const { data: currentPost } = await supabase
+    .from('posts')
+    .select('published_at')
+    .eq('id', postId)
+    .single()
+
   // Update post
   const { error: postError } = await supabase
     .from('posts')
@@ -68,6 +76,10 @@ export async function updatePost(postId: string, formData: PostFormData) {
       content: formData.content,
       featured_image_url: formData.featured_image_url,
       published: formData.published,
+      published_at:
+        formData.published && !currentPost?.published_at
+          ? new Date().toISOString()
+          : currentPost?.published_at,
       updated_at: new Date().toISOString(),
     })
     .eq('id', postId)
@@ -119,10 +131,23 @@ export async function deletePost(postId: string) {
 export async function togglePublished(postId: string, currentStatus: boolean) {
   const supabase = await createClient()
 
+  const newPublishedStatus = !currentStatus
+
+  // Get current published_at to preserve it if already set
+  const { data: currentPost } = await supabase
+    .from('posts')
+    .select('published_at')
+    .eq('id', postId)
+    .single()
+
   const { error } = await supabase
     .from('posts')
     .update({
-      published: !currentStatus,
+      published: newPublishedStatus,
+      published_at:
+        newPublishedStatus && !currentPost?.published_at
+          ? new Date().toISOString()
+          : currentPost?.published_at,
       updated_at: new Date().toISOString(),
     })
     .eq('id', postId)
