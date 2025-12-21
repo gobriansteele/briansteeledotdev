@@ -121,12 +121,12 @@ export function CreateTagModal({ isOpen, onClose }: CreateTagModalProps) {
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="tag-name" className="block text-sm font-medium text-slate-300 mb-2">
               Tag Name *
             </label>
             <input
               type="text"
-              id="name"
+              id="tag-name"
               value={name}
               onChange={(e) => handleNameChange(e.target.value)}
               placeholder="e.g., TypeScript"
@@ -137,12 +137,12 @@ export function CreateTagModal({ isOpen, onClose }: CreateTagModalProps) {
           </div>
 
           <div>
-            <label htmlFor="slug" className="block text-sm font-medium text-slate-300 mb-2">
+            <label htmlFor="tag-slug" className="block text-sm font-medium text-slate-300 mb-2">
               Slug *
             </label>
             <input
               type="text"
-              id="slug"
+              id="tag-slug"
               value={slug}
               onChange={(e) => handleSlugChange(e.target.value)}
               placeholder="e.g., typescript"

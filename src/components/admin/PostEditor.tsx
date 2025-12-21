@@ -89,6 +89,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
   }
 
   return (
+    <>
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
         <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded">
@@ -234,12 +235,13 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           Cancel
         </button>
       </div>
-
-      {/* Create Tag Modal */}
-      <CreateTagModal
-        isOpen={isCreateTagModalOpen}
-        onClose={() => setIsCreateTagModalOpen(false)}
-      />
     </form>
+
+    {/* Create Tag Modal - must be outside form to avoid nested forms */}
+    <CreateTagModal
+      isOpen={isCreateTagModalOpen}
+      onClose={() => setIsCreateTagModalOpen(false)}
+    />
+  </>
   )
 }
