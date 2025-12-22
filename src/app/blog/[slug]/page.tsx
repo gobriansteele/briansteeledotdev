@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { serializeMDX, getReadingTime } from '@/lib/mdx'
 import { Badge } from '@/components/ui/Badge'
+import { Navigation } from '@/components/Navigation'
 import { format } from 'date-fns'
 import Image from 'next/image'
 import type { Metadata } from 'next'
@@ -70,6 +71,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="max-w-content mx-auto px-6 py-12">
+      <Navigation />
       <article>
         {/* Header */}
         <header className="mb-8 md:mb-12">
