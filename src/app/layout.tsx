@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://briansteele.dev',
     siteName: 'Brian Steele',
-    title: 'Brian Steele - Head of AI at Honor Education',
-    description: 'Head of AI at Honor Education. Writing about AI, leadership, and software engineering.',
+    title: 'Brian Steele - Head of Engineering at Honor Education',
+    description: 'Head of Engineering at Honor Education. Writing about AI, leadership, and software engineering.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Brian Steele',
-    description: 'Head of AI at Honor Education',
+    description: 'Head of Engineering at Honor Education',
   },
   robots: {
     index: true,

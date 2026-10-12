@@ -7,19 +7,16 @@ export function About() {
         <p>
           I&apos;m the{' '}
           <span className="text-foreground font-semibold">
-            Head of AI at Honor Education,
+            Head of Engineering at Honor Education,
           </span>
-          where I build multi-agent systems and integrate AI into our
-          educational platform while helping the company figure out how to
-          actually leverage AI effectively. I&apos;m not interested in
-          impressive demos—I&apos;m focused on shipping tools that work and
-          cutting through the hype to find what moves the needle. With 15+ years
-          of engineering experience, I stay close to the code while leading AI
-          initiatives, working with LangGraph applications, MCP integrations,
-          and everything in between.
+          where I'm spending my days building an excellent engineering
+          team&sol;platform and leading the effort to leverage AI effectively.
+          I&apos;m not interested in impressive demos or using AI for using AI's
+          sake—I&apos;m focused on shipping tools that work well while ensuring
+          our usage of AI is in service of human thriving and cognitive fitness.
         </p>
         <p>
-          My journey in eng started in 2010 when I got curious about
+          My journey in eng started in 2009 when I got curious about
           &quot;viewing page source&quot; and fell in love with not only
           designing for the web, but building it. Since then, I&apos;ve
           progressed through companies ranging from large enterprises to
@@ -67,18 +64,18 @@ export function About() {
           engineering leadership and cutting-edge AI technology.
         </p>
         <p>
-          When I&apos;m not writing code or thinking about transformers and
-          attention, you can find me{' '}
+          When I&apos;m not writing code or thinking about transformers,
+          self-attention, and how AI fits into learning you can find me{' '}
           <a
             href="https://www.strava.com/athletes/33433580"
             target="_blank"
             rel="noopener noreferrer"
             className="link-underline"
           >
-            on my bike
+            on my bike,
           </a>{' '}
-          exploring Minneapolis, MN, or discovering great coffee shops and
-          frequenting breweries with excellent IPAs.
+          hanging out in great coffee shops or frequenting all the great
+          breweries in Minneapolis, MN.
         </p>
       </div>
     </section>

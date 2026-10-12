@@ -1,5 +1,13 @@
 export const experience = [
   {
+    startDate: '2026',
+    endDate: 'Present',
+    company: 'Honor Education',
+    role: 'Head of Engineering',
+    tags: ['Executive Leadership', 'Engineering', 'AI'],
+    description: `Building an effective engineering team at Honor. The day-to-day work is focused on technical excellence, building a strong learning culture and figuring out how to thrive in a world where AI engineering has become ubiquitous.`,
+  } as const,
+  {
     startDate: '2025',
     endDate: 'Present',
     company: 'Honor Education',
