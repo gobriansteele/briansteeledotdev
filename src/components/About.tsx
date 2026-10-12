@@ -9,9 +9,9 @@ export function About() {
           <span className="text-foreground font-semibold">
             Head of Engineering at Honor Education,
           </span>
-          where I'm spending my days building an excellent engineering
+          where I&apos;m spending my days building an excellent engineering
           team&sol;platform and leading the effort to leverage AI effectively.
-          I&apos;m not interested in impressive demos or using AI for using AI's
+          I&apos;m not interested in impressive demos or using AI for using AI&apos;s
           sake—I&apos;m focused on shipping tools that work well while ensuring
           our usage of AI is in service of human thriving and cognitive fitness.
         </p>
