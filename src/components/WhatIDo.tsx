@@ -2,9 +2,15 @@ import { Card } from './ui/Card'
 
 const areas = [
   {
-    title: 'AI Leadership',
+    title: 'Engineering Leadership',
     description:
-      'Leading research and development of AI solutions that transform educational technology.',
+      'Theory and practice around building and leading excellent engineering teams',
+    icon: '⌨️',
+  },
+  {
+    title: 'AI Thinking and Leadership',
+    description:
+      'Exploring a human-centered approach to leveraging AI in day-to-day life.',
     icon: '🤖',
   },
   {
@@ -20,9 +26,9 @@ const areas = [
     icon: '🔬',
   },
   {
-    title: 'Ride My Bike',
+    title: 'Ride Bikes',
     description:
-      "Gotta ride my bike. It's good for my health (and all my relationships).",
+      'Getting away from screens and doing what I love with the person I love.',
     icon: '🚴',
   },
 ]
