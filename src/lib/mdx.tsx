@@ -28,14 +28,21 @@ const components = {
       className="rounded-lg border border-border"
     />
   ),
-  a: (props: AnchorProps) => (
-    <Link
-      href={props.href || '#'}
-      className="text-accent-primary hover:text-accent-hover underline underline-offset-2"
-    >
-      {props.children}
-    </Link>
-  ),
+  a: (props: AnchorProps) => {
+    const href = props.href || '#'
+    if (href.startsWith('#')) {
+      return (
+        <a href={href} className="text-inherit hover:text-inherit [font-weight:inherit] no-underline">
+          {props.children}
+        </a>
+      )
+    }
+    return (
+      <Link href={href} className="text-accent-primary hover:text-accent-hover no-underline">
+        {props.children}
+      </Link>
+    )
+  },
   h1: (props: HeadingProps) => <h1 className="text-4xl font-bold mt-8 mb-4 text-foreground" {...props} />,
   h2: (props: HeadingProps) => <h2 className="text-3xl font-bold mt-6 mb-3 text-foreground" {...props} />,
   h3: (props: HeadingProps) => <h3 className="text-2xl font-semibold mt-4 mb-2 text-foreground" {...props} />,

@@ -4,6 +4,7 @@ module.exports = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -43,12 +44,9 @@ module.exports = {
             maxWidth: 'none',
             a: {
               color: '#5e81ac',
-              textDecoration: 'underline',
-              textDecorationColor: '#5e81ac',
-              textUnderlineOffset: '3px',
+              textDecoration: 'none',
               '&:hover': {
                 color: '#4c6a8a',
-                textDecorationColor: '#4c6a8a',
               },
             },
             h1: {
