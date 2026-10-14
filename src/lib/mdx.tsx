@@ -47,8 +47,8 @@ const components = {
   h2: (props: HeadingProps) => <h2 className="text-3xl font-bold mt-6 mb-3 text-foreground" {...props} />,
   h3: (props: HeadingProps) => <h3 className="text-2xl font-semibold mt-4 mb-2 text-foreground" {...props} />,
   p: (props: ParagraphProps) => <p className="mb-4 leading-relaxed text-foreground-secondary" {...props} />,
-  ul: (props: ListProps) => <ul className="list-disc list-outside ml-6 mb-4 space-y-2 text-foreground-secondary" {...props} />,
-  ol: (props: ListProps) => <ol className="list-decimal list-outside ml-6 mb-4 space-y-2 text-foreground-secondary" {...props} />,
+  ul: (props: ListProps) => <ul className="text-foreground-secondary" {...props} />,
+  ol: (props: ListProps) => <ol className="text-foreground-secondary" {...props} />,
   blockquote: (props: BlockquoteProps) => (
     <blockquote className="border-l-4 border-accent-primary bg-background-secondary pl-4 py-2 italic my-4 text-foreground-secondary" {...props} />
   ),

@@ -42,6 +42,8 @@ module.exports = {
           css: {
             color: '#2e3440',
             maxWidth: 'none',
+            '--tw-prose-bullets': '#adb5bd',
+            '--tw-prose-counters': '#6c757d',
             a: {
               color: '#5e81ac',
               textDecoration: 'none',
@@ -90,6 +92,14 @@ module.exports = {
             blockquote: {
               color: '#4c566a',
               borderLeftColor: '#5e81ac',
+            },
+          },
+        },
+        lg: {
+          css: {
+            li: {
+              marginTop: '0.25em',
+              marginBottom: '0.25em',
             },
           },
         },
