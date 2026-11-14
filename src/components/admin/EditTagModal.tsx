@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useTransition, useEffect } from 'react'
+import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import { updateTag } from '@/app/admin/(protected)/tags/actions'
 import { TagWithPostCount } from '@/types/blog'
@@ -15,17 +15,10 @@ export function EditTagModal({ tag, isOpen, onClose }: EditTagModalProps) {
   const router = useRouter()
   const [isPending, startTransition] = useTransition()
   const [error, setError] = useState<string | null>(null)
-  const [name, setName] = useState('')
-  const [slug, setSlug] = useState('')
-
-  // Update form when tag changes
-  useEffect(() => {
-    if (tag) {
-      setName(tag.name)
-      setSlug(tag.slug)
-      setError(null)
-    }
-  }, [tag])
+  // Form state is seeded from the tag; the parent keys this component by tag id
+  // so it remounts with fresh state whenever a different tag is edited.
+  const [name, setName] = useState(tag?.name ?? '')
+  const [slug, setSlug] = useState(tag?.slug ?? '')
 
   if (!isOpen || !tag) return null
 

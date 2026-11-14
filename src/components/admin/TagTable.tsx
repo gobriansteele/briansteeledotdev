@@ -114,6 +114,7 @@ export function TagTable({ initialTags }: TagTableProps) {
         onClose={() => setIsCreateModalOpen(false)}
       />
       <EditTagModal
+        key={editingTag?.id ?? 'none'}
         tag={editingTag}
         isOpen={!!editingTag}
         onClose={() => setEditingTag(null)}

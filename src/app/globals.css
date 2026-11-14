@@ -1,3 +1,6 @@
+/* Syntax highlighting theme for code blocks. @import must precede all other rules. */
+@import 'highlight.js/styles/nord.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -64,6 +67,3 @@ html {
 ::selection {
   @apply bg-accent-secondary/30;
 }
-
-/* Import syntax highlighting theme - use a light-friendly dark theme for code */
-@import 'highlight.js/styles/nord.css';
