@@ -89,13 +89,13 @@ export function UploadImageForm() {
         </div>
 
         {error && (
-          <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded">
+          <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-sm">
             {error}
           </div>
         )}
 
         {success && (
-          <div className="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded">
+          <div className="bg-green-900/50 border border-green-700 text-green-200 px-4 py-3 rounded-sm">
             {success}
           </div>
         )}

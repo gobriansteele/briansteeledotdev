@@ -34,7 +34,7 @@ export function DeleteTagButton({ tag }: DeleteTagButtonProps) {
       <button
         onClick={() => setShowConfirm(true)}
         disabled={isPending}
-        className="px-3 py-1 text-sm text-red-400 hover:text-red-300 border border-red-700 rounded hover:bg-red-900/20 transition-colors disabled:opacity-50"
+        className="px-3 py-1 text-sm text-red-400 hover:text-red-300 border border-red-700 rounded-sm hover:bg-red-900/20 transition-colors disabled:opacity-50"
       >
         Delete
       </button>
@@ -69,7 +69,7 @@ export function DeleteTagButton({ tag }: DeleteTagButtonProps) {
 
             {/* Error message */}
             {error && (
-              <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded mb-4">
+              <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-sm mb-4">
                 {error}
               </div>
             )}
@@ -82,7 +82,7 @@ export function DeleteTagButton({ tag }: DeleteTagButtonProps) {
               </p>
 
               {tag.post_count && tag.post_count > 0 ? (
-                <div className="bg-yellow-900/30 border border-yellow-700 text-yellow-200 px-4 py-3 rounded">
+                <div className="bg-yellow-900/30 border border-yellow-700 text-yellow-200 px-4 py-3 rounded-sm">
                   <p className="font-medium mb-1">Warning</p>
                   <p className="text-sm">
                     This tag is used in {tag.post_count} {tag.post_count === 1 ? 'post' : 'posts'}.

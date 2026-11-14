@@ -1,9 +1,41 @@
 /* Syntax highlighting theme for code blocks. @import must precede all other rules. */
 @import 'highlight.js/styles/nord.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss' source(none);
+
+/* Same scan paths as the v3 `content` setting (auto-detection would also pick up .worktrees/ and docs/) */
+@source '../components';
+@source '../app';
+@source '../lib';
+
+/* Theme + typography plugin still live in the JS config */
+@config '../../tailwind.config.js';
+
+/*
+  Tailwind v4 changed some preflight defaults. Keep the v3 look:
+  - default border color was gray-200 (v4: currentColor)
+  - placeholder color was gray-400 (v4: currentColor at 50%)
+  - buttons used cursor: pointer (v4: default)
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e5e7eb;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #9ca3af;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 @layer base {
   body {

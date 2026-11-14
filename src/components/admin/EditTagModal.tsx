@@ -83,14 +83,14 @@ export function EditTagModal({ tag, isOpen, onClose }: EditTagModalProps) {
 
         {/* Error message */}
         {error && (
-          <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded mb-4">
+          <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-sm mb-4">
             {error}
           </div>
         )}
 
         {/* Info about posts */}
         {tag.post_count && tag.post_count > 0 && (
-          <div className="bg-blue-900/30 border border-blue-700 text-blue-200 px-4 py-3 rounded mb-4">
+          <div className="bg-blue-900/30 border border-blue-700 text-blue-200 px-4 py-3 rounded-sm mb-4">
             This tag is used in {tag.post_count} {tag.post_count === 1 ? 'post' : 'posts'}
           </div>
         )}
@@ -109,7 +109,7 @@ export function EditTagModal({ tag, isOpen, onClose }: EditTagModalProps) {
               placeholder="e.g., TypeScript"
               required
               disabled={isPending}
-              className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
+              className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50"
             />
           </div>
 
@@ -125,7 +125,7 @@ export function EditTagModal({ tag, isOpen, onClose }: EditTagModalProps) {
               placeholder="e.g., typescript"
               required
               disabled={isPending}
-              className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50 font-mono text-sm"
+              className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:opacity-50 font-mono text-sm"
             />
             <p className="mt-1 text-xs text-slate-400">
               Changing the slug will affect URLs in your blog

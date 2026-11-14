@@ -68,7 +68,7 @@ export default async function AdminDashboard() {
             <Link
               href={`/admin/posts/${post.id}/edit`}
               key={post.id}
-              className="flex justify-between items-center p-3 bg-slate-700 rounded"
+              className="flex justify-between items-center p-3 bg-slate-700 rounded-sm"
             >
               <div>
                 <h3 className="text-white font-medium">{post.title}</h3>
@@ -77,7 +77,7 @@ export default async function AdminDashboard() {
                 </p>
               </div>
               <span
-                className={`px-2 py-1 text-xs rounded ${
+                className={`px-2 py-1 text-xs rounded-sm ${
                   post.published
                     ? 'bg-green-900 text-green-300'
                     : 'bg-yellow-900 text-yellow-300'

@@ -32,7 +32,7 @@ export function TagTable({ initialTags }: TagTableProps) {
           placeholder="Search tags..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="flex-1 px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="flex-1 px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <button
           onClick={() => setIsCreateModalOpen(true)}
@@ -73,7 +73,7 @@ export function TagTable({ initialTags }: TagTableProps) {
                     <span className="text-white font-medium">{tag.name}</span>
                   </td>
                   <td className="px-6 py-4">
-                    <code className="text-sm text-slate-300 bg-slate-900 px-2 py-1 rounded">
+                    <code className="text-sm text-slate-300 bg-slate-900 px-2 py-1 rounded-sm">
                       {tag.slug}
                     </code>
                   </td>
@@ -94,7 +94,7 @@ export function TagTable({ initialTags }: TagTableProps) {
                     <div className="flex justify-end gap-2">
                       <button
                         onClick={() => setEditingTag(tag)}
-                        className="px-3 py-1 text-sm text-blue-400 hover:text-blue-300 border border-blue-700 rounded hover:bg-blue-900/20 transition-colors"
+                        className="px-3 py-1 text-sm text-blue-400 hover:text-blue-300 border border-blue-700 rounded-sm hover:bg-blue-900/20 transition-colors"
                       >
                         Edit
                       </button>

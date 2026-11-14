@@ -92,7 +92,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
     <>
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
-        <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded">
+        <div className="bg-red-900/50 border border-red-700 text-red-200 px-4 py-3 rounded-sm">
           {error}
         </div>
       )}
@@ -107,7 +107,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           value={formData.title}
           onChange={(e) => handleTitleChange(e.target.value)}
           required
-          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="Enter post title"
         />
       </div>
@@ -122,7 +122,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           value={formData.slug}
           onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
           required
-          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="post-slug"
         />
       </div>
@@ -137,7 +137,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
           required
           rows={3}
-          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="Brief description of the post"
         />
       </div>
@@ -152,7 +152,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           onChange={(e) => setFormData({ ...formData, content: e.target.value })}
           required
           rows={15}
-          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm"
+          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent font-mono text-sm"
           placeholder="Write your post content (Markdown supported)"
         />
       </div>
@@ -166,7 +166,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           id="featured_image_url"
           value={formData.featured_image_url}
           onChange={(e) => setFormData({ ...formData, featured_image_url: e.target.value })}
-          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          className="w-full px-4 py-2 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           placeholder="https://example.com/image.jpg"
         />
       </div>
@@ -211,7 +211,7 @@ export function PostEditor({ post, tags, postTags = [] }: PostEditorProps) {
           id="published"
           checked={formData.published}
           onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
-          className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded focus:ring-blue-500 focus:ring-2"
+          className="w-4 h-4 text-blue-600 bg-slate-700 border-slate-600 rounded-sm focus:ring-blue-500 focus:ring-2"
         />
         <label htmlFor="published" className="ml-2 text-sm font-medium text-slate-300">
           Published
