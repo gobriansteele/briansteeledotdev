@@ -21,7 +21,7 @@ export function TogglePublishButton({ postId, isPublished }: TogglePublishButton
     <button
       onClick={handleToggle}
       disabled={isPending}
-      className={`px-3 py-1 text-sm rounded transition-colors disabled:opacity-50 ${
+      className={`px-3 py-1 text-sm rounded-sm transition-colors disabled:opacity-50 ${
         isPublished
           ? 'text-slate-400 hover:text-slate-300 border border-slate-600 hover:bg-slate-700'
           : 'text-green-400 hover:text-green-300 border border-green-700 hover:bg-green-900/20'

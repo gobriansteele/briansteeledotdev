@@ -8,9 +8,9 @@ export function About() {
           I&apos;m the{' '}
           <span className="text-foreground font-semibold">
             Head of Engineering at Honor Education,
-          </span>
+          </span>{' '}
           where I&apos;m spending my days building an excellent engineering
-          team&sol;platform and leading the effort to leverage AI effectively.
+          team/platform and leading the effort to leverage AI effectively.
           I&apos;m not interested in impressive demos or using AI for using AI&apos;s
           sake—I&apos;m focused on shipping tools that work well while ensuring
           our usage of AI is in service of human thriving and cognitive fitness.

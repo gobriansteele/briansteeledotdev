@@ -43,7 +43,7 @@ export function MediaImageCard({ fileName, publicUrl }: MediaImageCardProps) {
   return (
     <div className="bg-slate-800 rounded-lg p-4 border border-slate-700 hover:border-slate-600 transition-colors">
       {/* Image Preview */}
-      <div className="relative w-full h-48 mb-3 bg-slate-900 rounded overflow-hidden">
+      <div className="relative w-full h-48 mb-3 bg-slate-900 rounded-sm overflow-hidden">
         <Image
           src={publicUrl}
           alt={fileName}
@@ -62,7 +62,7 @@ export function MediaImageCard({ fileName, publicUrl }: MediaImageCardProps) {
       <div className="flex gap-2">
         <button
           onClick={handleCopyUrl}
-          className="flex-1 px-3 py-2 text-xs bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+          className="flex-1 px-3 py-2 text-xs bg-blue-600 text-white rounded-sm hover:bg-blue-700 transition-colors"
         >
           {copySuccess ? 'Copied!' : 'Copy URL'}
         </button>
@@ -71,7 +71,7 @@ export function MediaImageCard({ fileName, publicUrl }: MediaImageCardProps) {
           <button
             onClick={() => setShowDeleteConfirm(true)}
             disabled={isDeleting}
-            className="px-3 py-2 text-xs bg-red-600 text-white rounded hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="px-3 py-2 text-xs bg-red-600 text-white rounded-sm hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             Delete
           </button>
@@ -80,14 +80,14 @@ export function MediaImageCard({ fileName, publicUrl }: MediaImageCardProps) {
             <button
               onClick={handleDelete}
               disabled={isDeleting}
-              className="px-2 py-2 text-xs bg-red-700 text-white rounded hover:bg-red-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-2 py-2 text-xs bg-red-700 text-white rounded-sm hover:bg-red-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {isDeleting ? '...' : 'Yes'}
             </button>
             <button
               onClick={() => setShowDeleteConfirm(false)}
               disabled={isDeleting}
-              className="px-2 py-2 text-xs bg-slate-600 text-white rounded hover:bg-slate-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-2 py-2 text-xs bg-slate-600 text-white rounded-sm hover:bg-slate-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               No
             </button>

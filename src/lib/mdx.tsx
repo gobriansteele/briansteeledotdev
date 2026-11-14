@@ -56,7 +56,7 @@ const components = {
     // If code is inside a pre tag, don't add extra styling (handled by pre)
     const isInline = !props.className?.includes('language-')
     if (isInline) {
-      return <code className="bg-background-secondary px-1.5 py-0.5 rounded text-sm font-mono text-foreground" {...props} />
+      return <code className="bg-background-secondary px-1.5 py-0.5 rounded-sm text-sm font-mono text-foreground" {...props} />
     }
     return <code {...props} />
   },

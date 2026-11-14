@@ -101,7 +101,7 @@ export default async function PostsPage() {
                     <div className="flex justify-end gap-2">
                       <Link
                         href={`/admin/posts/${post.id}/edit`}
-                        className="px-3 py-1 text-sm text-blue-400 hover:text-blue-300 border border-blue-700 rounded hover:bg-blue-900/20 transition-colors"
+                        className="px-3 py-1 text-sm text-blue-400 hover:text-blue-300 border border-blue-700 rounded-sm hover:bg-blue-900/20 transition-colors"
                       >
                         Edit
                       </Link>

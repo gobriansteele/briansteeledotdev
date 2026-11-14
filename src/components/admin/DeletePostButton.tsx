@@ -25,7 +25,7 @@ export function DeletePostButton({ postId, title }: DeletePostButtonProps) {
         <button
           onClick={handleDelete}
           disabled={isPending}
-          className="px-3 py-1 text-sm text-white bg-red-600 hover:bg-red-700 rounded disabled:opacity-50 transition-colors"
+          className="px-3 py-1 text-sm text-white bg-red-600 hover:bg-red-700 rounded-sm disabled:opacity-50 transition-colors"
         >
           {isPending ? 'Deleting...' : 'Yes'}
         </button>
@@ -43,7 +43,7 @@ export function DeletePostButton({ postId, title }: DeletePostButtonProps) {
   return (
     <button
       onClick={() => setShowConfirm(true)}
-      className="px-3 py-1 text-sm text-red-400 hover:text-red-300 border border-red-700 rounded hover:bg-red-900/20 transition-colors"
+      className="px-3 py-1 text-sm text-red-400 hover:text-red-300 border border-red-700 rounded-sm hover:bg-red-900/20 transition-colors"
     >
       Delete
     </button>
